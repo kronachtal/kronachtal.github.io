@@ -93,7 +93,7 @@ $(document).ready(function () {
             name: "Bitte Name angeben.",
             email: "Bitte eine valide E-Mail-Adresse angeben.",
             phone: "Bitte Ihre Telefonnummer angeben.",
-            guest: "Bitte Anzahl der Gäste angeben.",
+            gaeste: "Bitte Anzahl der Gäste angeben.",
             message: "Bitte eine Nachricht eingeben.",
             anreise: "Bitte Datum angeben.",
             abreise: "Bitte Datum angeben.",
