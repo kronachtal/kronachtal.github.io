@@ -15,14 +15,14 @@ $('.datepicker').datepicker({
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function () {
     'use strict'
-  
+
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll('.needs-validation')
-  
+
     // Loop over them and prevent submission
 
-  })()
-$.validator.setDefaults( {
+})()
+$.validator.setDefaults({
     submitHandler: function () {
         var name_form = $("#name").val();
         var email_form = $("#email").val();
@@ -52,7 +52,7 @@ $.validator.setDefaults( {
                     abreise: abreise_form,
                     nachricht: nachricht_form
                 }),
-                beforeSend: function() {
+                beforeSend: function () {
                     $("#submitButtonLoading").show();
                     $("#submitButton").hide();
                 },
@@ -68,21 +68,21 @@ $.validator.setDefaults( {
 
         }
     }
-} );
+});
 
 
 
 $(document).ready(function () {
 
 
-    $("#contactForm").validate( {
+    $("#contactForm").validate({
         rules: {
             name: "required",
             email: {
                 required: true,
                 email: true
             },
-            phone : "required",
+            phone: "required",
             gaeste: "required",
             message: "required",
             anreise: "required",
@@ -100,23 +100,23 @@ $(document).ready(function () {
             agree: "Bitte der Datenschutzerklärung zustimmen."
         },
         errorElement: "em",
-        errorPlacement: function ( error, element ) {
+        errorPlacement: function (error, element) {
             // Add the `help-block` class to the error element
-            error.addClass( "help-block" );
+            error.addClass("help-block");
 
-            if ( element.prop( "type" ) === "checkbox" ) {
-                error.insertAfter( element.parent( "label" ) );
+            if (element.prop("type") === "checkbox") {
+                error.insertAfter(element.parent("label"));
             } else {
-                error.insertAfter( element );
+                error.insertAfter(element);
             }
         },
-        highlight: function ( element, errorClass, validClass ) {
-            $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+        highlight: function (element, errorClass, validClass) {
+            $(element).parents(".col-sm-5").addClass("has-error").removeClass("has-success");
         },
         unhighlight: function (element, errorClass, validClass) {
-            $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+            $(element).parents(".col-sm-5").addClass("has-success").removeClass("has-error");
         }
-    } );
+    });
 
     let gallery = new SimpleLightbox({
         elements: '#portfolio a.portfolio-link'
@@ -125,7 +125,7 @@ $(document).ready(function () {
     $("#opengallery").click(function () {
         console.log('sdf')
         $('#portfolio a.portfolio-link').simpleLightbox({ /* options */ }).open()
-        
+
     })
 
 });
