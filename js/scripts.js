@@ -22,19 +22,8 @@ $('.datepicker').datepicker({
     // Loop over them and prevent submission
 
   })()
-
-$(document).ready(function () {
-    let gallery = new SimpleLightbox({
-        elements: '#portfolio a.portfolio-link'
-    });
-
-    $("#opengallery").click(function () {
-        console.log('sdf')
-        $('#portfolio a.portfolio-link').simpleLightbox({ /* options */ }).open()
-        
-    })
-    $("#submitButton").click(function () {
-
+$.validator.setDefaults( {
+    submitHandler: function () {
         var name_form = $("#name").val();
         var email_form = $("#email").val();
         var tel_form = $("#tel").val();
@@ -42,9 +31,10 @@ $(document).ready(function () {
         var anreise_form = $("#anreise").val();
         var abreise_form = $("#abreise").val();
         var nachricht_form = $("#message").val();
+        var data_privacy = $("#data_privacy").val();
         $("#returnmessage").empty(); // To empty previous error/success message.
         // Checking for blank fields.
-        if (name_form == '' || email_form == '' || tel_form == '' || nachricht_form == ''|| gaeste_form == '') {
+        if (name_form == '' || email_form == '' || tel_form == '' || nachricht_form == '' || gaeste_form == '') {
             alert("Bitte das Formular vollständig ausfüllen");
         } else {
             // Returns successful data submission message when the entered information is stored in database.
@@ -77,7 +67,67 @@ $(document).ready(function () {
             });
 
         }
+    }
+} );
+
+
+
+$(document).ready(function () {
+
+
+    $("#contactForm").validate( {
+        rules: {
+            name: "required",
+            email: {
+                required: true,
+                email: true
+            },
+            phone : "required",
+            gaeste: "required",
+            message: "required",
+            anreise: "required",
+            abreise: "required",
+            agree: "required"
+        },
+        messages: {
+            name: "Bitte Name angeben.",
+            email: "Bitte eine valide E-Mail-Adresse angeben.",
+            phone: "Bitte Ihre Telefonnummer angeben.",
+            guest: "Bitte Anzahl der Gäste angeben.",
+            message: "Bitte eine Nachricht eingeben.",
+            anreise: "Bitte Datum angeben.",
+            abreise: "Bitte Datum angeben.",
+            agree: "Bitte der Datenschutzerklärung zustimmen."
+        },
+        errorElement: "em",
+        errorPlacement: function ( error, element ) {
+            // Add the `help-block` class to the error element
+            error.addClass( "help-block" );
+
+            if ( element.prop( "type" ) === "checkbox" ) {
+                error.insertAfter( element.parent( "label" ) );
+            } else {
+                error.insertAfter( element );
+            }
+        },
+        highlight: function ( element, errorClass, validClass ) {
+            $( element ).parents( ".col-sm-5" ).addClass( "has-error" ).removeClass( "has-success" );
+        },
+        unhighlight: function (element, errorClass, validClass) {
+            $( element ).parents( ".col-sm-5" ).addClass( "has-success" ).removeClass( "has-error" );
+        }
+    } );
+
+    let gallery = new SimpleLightbox({
+        elements: '#portfolio a.portfolio-link'
     });
+
+    $("#opengallery").click(function () {
+        console.log('sdf')
+        $('#portfolio a.portfolio-link').simpleLightbox({ /* options */ }).open()
+        
+    })
+
 });
 
 

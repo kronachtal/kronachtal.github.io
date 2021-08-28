@@ -11460,3 +11460,15 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
 
 }
+
+.form-check-label {
+  color:#fff
+}
+
+.form-data-privacy {
+  padding-top: 20px;
+}
+
+form em {
+  color:#dc3545;
+}
