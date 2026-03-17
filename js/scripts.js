@@ -29,8 +29,25 @@ $.validator.setDefaults({
         $("#submitButtonLoading").show();
         $("#submitButton").hide();
 
-        // Submit natively to Formspree so all named fields are transferred as form data.
-        form.submit();
+        fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(function (response) {
+            if (response.ok) {
+                $("#submitSuccessMessage").removeClass("d-none");
+                form.reset();
+            } else {
+                $("#submitErrorMessage").removeClass("d-none");
+            }
+        }).catch(function () {
+            $("#submitErrorMessage").removeClass("d-none");
+        }).finally(function () {
+            $("#submitButtonLoading").hide();
+            $("#submitButton").show();
+        });
     }
 });
 
