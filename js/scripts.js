@@ -23,50 +23,31 @@ $('.datepicker').datepicker({
 
 })()
 $.validator.setDefaults({
-    submitHandler: function () {
-        var name_form = $("#name").val();
-        var email_form = $("#email").val();
-        var tel_form = $("#tel").val();
-        var gaeste_form = $("#gaeste").val();
-        var anreise_form = $("#anreise").val();
-        var abreise_form = $("#abreise").val();
-        var nachricht_form = $("#message").val();
-        var data_privacy = $("#data_privacy").val();
-        $("#returnmessage").empty(); // To empty previous error/success message.
-        // Checking for blank fields.
-        if (name_form == '' || email_form == '' || tel_form == '' || nachricht_form == '' || gaeste_form == '') {
-            alert("Bitte das Formular vollständig ausfüllen");
-        } else {
-            // Returns successful data submission message when the entered information is stored in database.
-            console.log($("#contactForm").serialize());
-            $.ajax({
-                url: "https://script.google.com/macros/s/AKfycbx-lvcngau_MidLf0_HtXRNGp9pHDdSyVYo_hsAW3dqJBzPb8sMpSjf6ApeGVAR0GhWFA/exec",
-                method: "POST",
-                dataType: "json",
-                data: JSON.stringify({
-                    name: name_form,
-                    email: email_form,
-                    telefon: nachricht_form,
-                    gaeste: gaeste_form,
-                    anreise: anreise_form,
-                    abreise: abreise_form,
-                    nachricht: nachricht_form
-                }),
-                beforeSend: function () {
-                    $("#submitButtonLoading").show();
-                    $("#submitButton").hide();
-                },
-                success: function (response) {
-                    $("#submitSuccessMessage").removeClass("d-none");
-                    $("#submitButtonLoading").hide();
-                },
-                error: function (xhr, status) {
-                    $("#submitErrorMessage").removeClass("d-none");
-                    $("#submitButtonLoading").hide();
-                }
-            });
+    submitHandler: function (form) {
+        $("#submitSuccessMessage").addClass("d-none");
+        $("#submitErrorMessage").addClass("d-none");
+        $("#submitButtonLoading").show();
+        $("#submitButton").hide();
 
-        }
+        fetch(form.action, {
+            method: form.method,
+            body: new FormData(form),
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(function (response) {
+            if (response.ok) {
+                $("#submitSuccessMessage").removeClass("d-none");
+                form.reset();
+            } else {
+                $("#submitErrorMessage").removeClass("d-none");
+            }
+        }).catch(function () {
+            $("#submitErrorMessage").removeClass("d-none");
+        }).finally(function () {
+            $("#submitButtonLoading").hide();
+            $("#submitButton").show();
+        });
     }
 });
 
