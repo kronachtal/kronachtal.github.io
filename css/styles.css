@@ -24,11 +24,11 @@
   --bs-white: #fff;
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
-  --bs-primary: #ffc800;
+  --bs-primary: #4a7c59;
   --bs-secondary: #6c757d;
   --bs-success: #198754;
   --bs-info: #0dcaf0;
-  --bs-warning: #ffc800;
+  --bs-warning: #4a7c59;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
@@ -223,11 +223,11 @@ sup {
 }
 
 a {
-  color: #ffc800;
+  color: #4a7c59;
   text-decoration: underline;
 }
 a:hover {
-  color: #cca000;
+  color: #3a6347;
 }
 
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
@@ -10920,7 +10920,7 @@ p {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  background-color: #1e2419;
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -10930,7 +10930,7 @@ p {
   font-weight: 700;
 }
 #mainNav .navbar-brand {
-  color: #ffc800;
+  color: #a8c5a0;
   font-family: "Lobster Two","Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 400;
   letter-spacing: 0.0625em;
@@ -10945,7 +10945,7 @@ p {
   letter-spacing: 0.0625em;
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
-  color: #ffc800;
+  color: #a8c5a0;
 }
 
 @media (min-width: 992px) {
@@ -10967,7 +10967,7 @@ p {
   #mainNav.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #212529;
+    background-color: #1e2419;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
@@ -10988,7 +10988,7 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("../assets/img/unsplash-wald.jpg");
+  background: linear-gradient(to bottom, rgba(28, 46, 28, 0.75) 0%, rgba(28, 46, 28, 0.75) 100%), url("../assets/img/unsplash-wald.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -11042,7 +11042,7 @@ header.masthead .masthead-heading {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(255, 200, 0, 0.9);
+  background: rgba(74, 124, 89, 0.9);
   align-items: center;
   justify-content: center;
   opacity: 0;
@@ -11168,7 +11168,7 @@ header.masthead .masthead-heading {
   color: white;
   border: 7px solid #e9ecef;
   border-radius: 100%;
-  background-color: #ffc800;
+  background-color: #4a7c59;
 }
 .timeline > li .timeline-image h4, .timeline > li .timeline-image .h4 {
   font-size: 10px;
@@ -11297,7 +11297,7 @@ header.masthead .masthead-heading {
 }
 
 section#contact {
-  background-color: #212529;
+  background-color: #1e2419;
   background-image: url("../assets/img/map-image.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -11326,7 +11326,7 @@ section#contact form#contactForm p.help-block {
   margin: 0;
 }
 section#contact form#contactForm .form-control:focus {
-  border-color: #ffc800;
+  border-color: #4a7c59;
   box-shadow: none;
 }
 section#contact form#contactForm ::-webkit-input-placeholder {
@@ -11408,12 +11408,12 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .price_ab {
-  color: #ffc800;
+  color: #4a7c59;
   font-size: 1.8rem;
   font-weight: 900;
 }
 .price_val {
-  color: #ffc800;
+  color: #4a7c59;
   font-size: 3.5rem;
   font-weight: 900;
 }
@@ -11471,4 +11471,107 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 form em {
   color:#dc3545;
+}
+
+/* =====================================================
+   MODERN NATURE REDESIGN — OVERRIDE BLOCK
+   Forest green palette, warm parchment, card UI
+   ===================================================== */
+
+/* --- Global link colors --- */
+a { color: #4a7c59; }
+a:hover { color: #3a6347; }
+
+/* --- Bootstrap utility overrides --- */
+.text-primary { color: #4a7c59 !important; }
+.bg-primary { background-color: #4a7c59 !important; }
+.border-primary { border-color: #4a7c59 !important; }
+.link-primary { color: #4a7c59 !important; }
+.link-primary:hover { color: #3a6347 !important; }
+
+/* --- Warm parchment backgrounds --- */
+.bg-light,
+section.bg-light,
+.page-section.bg-light,
+footer.footer.bg-light,
+footer.footer { background-color: #f4efe6 !important; }
+
+footer.footer { border-top: 1px solid #ddd7cc; }
+
+/* --- Buttons — green, white text, slightly rounded --- */
+.btn-primary {
+  background-color: #4a7c59;
+  border-color: #3a6347;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #3a6347;
+  border-color: #2d5038;
+  color: #fff;
+}
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+  background-color: #3a6347;
+  border-color: #2d5038;
+  color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(74, 124, 89, 0.4);
+}
+.btn-primary:disabled,
+.btn-primary.disabled {
+  background-color: #4a7c59;
+  border-color: #3a6347;
+  color: #fff;
+}
+.btn-xl { letter-spacing: 0.05em; }
+
+/* --- Section heading decorative underline --- */
+.page-section h2.section-heading {
+  position: relative;
+  padding-bottom: 0.25rem;
+}
+.page-section h2.section-heading::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 3px;
+  background: #4a7c59;
+  margin: 0.75rem auto 0;
+  border-radius: 2px;
+}
+
+/* --- Gallery — soft image corners --- */
+#portfolio img.img-fluid { border-radius: 0.5rem 0.5rem 0 0; }
+#portfolio .portfolio-item .portfolio-caption { border-radius: 0 0 0.5rem 0.5rem; }
+#portfolio .portfolio-item .portfolio-link .portfolio-hover { border-radius: 0.5rem 0.5rem 0 0; }
+
+/* --- Amenity cards --- */
+#ausstattung .col-lg-3,
+#ausstattung .col-md-4,
+#ausstattung .col-sm-6 {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1.5rem 0.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#ausstattung .col-lg-3:hover,
+#ausstattung .col-md-4:hover,
+#ausstattung .col-sm-6:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.13);
+}
+
+/* --- FAQ accordion green active state --- */
+#faqs .accordion-button:not(.collapsed) {
+  color: #3a6347;
+  background-color: #eef5f0;
+  box-shadow: inset 0 -1px 0 rgba(74, 124, 89, 0.2);
+}
+#faqs .accordion-button:focus {
+  border-color: #4a7c59;
+  box-shadow: 0 0 0 0.25rem rgba(74, 124, 89, 0.25);
 }
